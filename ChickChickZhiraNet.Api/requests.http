@@ -1,0 +1,28 @@
+@host = http://localhost:5000
+
+### Усі продукти
+GET {{host}}/api/foods
+
+### Пошук продуктів
+GET {{host}}/api/foods?search=ябл
+
+### Додати прийом їжі (куряче філе, 150 г, обід)
+POST {{host}}/api/meals
+Content-Type: application/json
+
+{ "date": "2026-11-20", "foodId": 4, "grams": 150, "mealType": 1 }
+
+### Записи за день
+GET {{host}}/api/meals?date=2026-11-20
+
+### Підсумок за день з нормою калорій
+GET {{host}}/api/summary?date=2026-11-20&weightKg=70&heightCm=175&age=20&sex=Male&activity=1.375
+
+### Видалити запис (підставте id з відповіді POST)
+DELETE {{host}}/api/meals/00000000-0000-0000-0000-000000000000
+
+### Помилка валідації (грами = 0)
+POST {{host}}/api/meals
+Content-Type: application/json
+
+{ "date": "2026-11-20", "foodId": 4, "grams": 0, "mealType": 1 }
