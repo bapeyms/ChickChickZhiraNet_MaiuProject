@@ -4,7 +4,7 @@
 GET {{host}}/api/foods
 
 ### Пошук продуктів
-GET {{host}}/api/foods?search=ябл
+GET {{host}}/api/foods?search=apple
 
 ### Додати прийом їжі (куряче філе, 150 г, обід)
 POST {{host}}/api/meals
